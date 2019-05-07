@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+@import "../node_modules/bulma/bulma";
+
+/** custom fonts **/
+@font-face {
+    font-family: 'literata_bookmedium';
+    src: url('../fonts/literatabook/literatabook-medium.woff2') format('woff2'),
+        url('../fonts/literatabook/literatabook-medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'literata_bookbold';
+    src: url('../fonts/literatabook/literatabook-bold.woff2') format('woff2'),
+        url('../fonts/literatabook/literatabook-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'literata_bookregular';
+    src: url('../fonts/literatabook/literatabook.woff2') format('woff2'),
+        url('../fonts/literatabook/literatabook.woff') format('woff');
+}
+
+
+/** bagprivacy welcome **/
+
+.hero .title {
+    font-family: "literata_bookmedium", serif;
+    font-weight: 400;
+    padding: 3rem 0 0 0;
+}
+
+.is-1g {
+    $break-small: 480px;
+    $break-large: 1200px;
+
+    font-size: 5rem;
+
+    @media screen and (max-width: $break-small) {
+        font-size: 3rem;
+      }  
+}
+
+.bagprivacy-logo {
+    width: 320px;
+
+    path {
+        fill: none;
+        stroke: $white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.75px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 7s linear alternate forwards;
+        /**infinite**/
+    }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        opacity: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.wait-to-show {
+    -webkit-animation: seconds-wait 1s forwards;
+    -webkit-animation-delay: 4s;
+    -webkit-animation-iteration-count: 1;
+    animation: seconds-wait 1s forwards;
+    animation-delay: 4s;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+@keyframes seconds-wait {
+    0% {
+        opacity: 0;
+        left: -9999px;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.footer {
+    background: #000;
+
+    .heart-icon {
+        margin: 0 5px;
+    }
+
+    a {
+        color: $grey-dark;
+    }
+}
